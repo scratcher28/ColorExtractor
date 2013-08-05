@@ -144,6 +144,7 @@ class ColorExtractor
         $min = min($sRGBComponents);
         $diff = $max - $min;
         $sum = $max + $min;
+        $sum = $sum <= 0 ? 1 : $sum;
         return $sum/2 > .5 ? $diff/(2 - $diff) : $diff/$sum;
     }
 
